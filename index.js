@@ -94,7 +94,7 @@
     }
 
     function set(obj, path, value, doNotReplace){
-      if (path.includes('proto')) {
+      if (path.includes('proto') || path.includes('constructor')) {
         throw new Error('prototype modification is not allowed');
       }
       if (typeof path === 'number') {
